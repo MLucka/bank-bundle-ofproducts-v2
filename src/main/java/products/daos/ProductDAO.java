@@ -18,7 +18,7 @@ import products.entities.Product;
 @Component
 public class ProductDAO {
 	
-	public static final String PRODUCTS_JSON_FILE = "products.json";
+	public static final String PRODUCTS_JSON_FILE = "src/main/resources/json/products.json";
 	private List<Product> products = new ArrayList<Product>();
 	private JsonHelper jsonHelper = new JsonHelper();
 	

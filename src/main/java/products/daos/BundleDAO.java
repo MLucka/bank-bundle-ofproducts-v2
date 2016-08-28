@@ -20,7 +20,7 @@ import products.entities.Product;
 @Component
 public class BundleDAO {
 
-	public static final String BUNDLES_JSON_FILE = "bundles.json";
+	public static final String BUNDLES_JSON_FILE = "src/main/resources/json/bundles.json";
 	
 	private List<Bundle> bundles = new ArrayList<Bundle>();
 	private JsonHelper jsonHelper = new JsonHelper();
@@ -61,6 +61,22 @@ public class BundleDAO {
 		if(bundle!=null && isValidToAddProduct(bundle.getProductIds(), productId)) {
 			bundle.getProductIds().add(productId);
 			setBundleProducts();
+			return bundle;
+		}
+		return null;
+	}
+	
+	
+	/**
+	 * 
+	 * @param bundleId
+	 * @param productId
+	 * @return bundle
+	 */
+	public Bundle update(Bundle bundle, Integer productId) {
+		if(bundle!=null && isValidToAddProduct(bundle.getProductIds(), productId)) {
+			bundle.getProductIds().add(productId);
+			setBundleProducts(bundle);
 			return bundle;
 		}
 		return null;
@@ -107,7 +123,7 @@ public class BundleDAO {
 	/**
 	 * 
 	 */
-	private void setBundleProducts() {
+	public List<Bundle> setBundleProducts() {
 		
 		for(Bundle bundle : bundles) {
 			List<Product> products = new ArrayList<Product>();
@@ -117,7 +133,27 @@ public class BundleDAO {
 			bundle.setProducts(products);
 		}
 		
+		return bundles;
+		
 	}
+	
+	
+	/**
+	 * 
+	 */
+	public Bundle setBundleProducts(Bundle bundle) {
+
+		List<Product> products = new ArrayList<Product>();
+		for(Integer productId : bundle.getProductIds()) {
+			products.add(productDao.getItem(productId));
+		}
+		bundle.setProducts(products);
+
+		
+		return bundle;
+		
+	}
+	
 	
 	/**
 	 * 

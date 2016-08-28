@@ -83,11 +83,13 @@ public class JsonHelper {
 				for (JsonObject bundleJsonObj : bundlesJsonArray.getValuesAs(JsonObject.class)) {
 					  Integer bundleId = Integer.parseInt(bundleJsonObj.getString("id"));
 					  String name = bundleJsonObj.getString("name");
+					  Integer priority = Integer.parseInt(bundleJsonObj.getString("priority"));
 					  List<Integer> productIds = getListOfIdsFromJson(bundleJsonObj.getJsonArray("productIds"));
 					  List<Rule> rules = getListOfRulesFromJson(bundleJsonObj.getJsonArray("rules"));
 					  Bundle bundle = new Bundle(bundleId, name);
 					  bundle.setProductIds(productIds);
 					  bundle.setRules(rules);
+					  bundle.setPriority(priority);
 					  bundles.add(bundle);
 				  }
 			}
@@ -154,7 +156,7 @@ public class JsonHelper {
 					  String type = result.getString("type");
 					  List<List<String>> answers = getListOfAnswersFromJson(result.getJsonArray("answers"));
 					  Question question = new Question(type);
-					  question.setAnswers(answers);
+					  question.setAnswerBoundaries(answers);
 					  questions.add(question);
 				  }
 			}

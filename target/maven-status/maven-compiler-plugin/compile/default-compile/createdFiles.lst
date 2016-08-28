@@ -1,1 +1,17 @@
+products\entities\Product.class
+products\entities\QuestionType.class
+products\controllers\BundlesController.class
+products\entities\Question.class
 products\daos\RuleDAO$1.class
+products\controllers\RulesController.class
+products\entities\Bundle.class
+products\daos\BundleDAO.class
+products\entities\Answer.class
+products\JsonHelper.class
+products\entities\Rule.class
+products\controllers\ProductsController.class
+products\controllers\WelcomeController.class
+products\daos\ProductDAO.class
+products\entities\Question$AnswerBoundaries.class
+products\Application.class
+products\daos\RuleDAO.class

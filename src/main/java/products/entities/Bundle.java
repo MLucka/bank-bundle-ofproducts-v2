@@ -15,6 +15,7 @@ public class Bundle {
 	private List<Integer> productIds;
 	private List<Product> products;
 	private List<Rule> rules;
+	private Integer priority;
 	
 	public Bundle(Integer id, String name) {
 		super();
@@ -30,7 +31,7 @@ public class Bundle {
 		return name;
 	}
 
-	
+	@JsonIgnore
 	public List<Product> getProducts() {
 		return products;
 	}
@@ -39,7 +40,7 @@ public class Bundle {
 		this.products = products;
 	}
 
-	@JsonIgnore
+	
 	public List<Integer> getProductIds() {
 		return productIds;
 	}
@@ -54,6 +55,14 @@ public class Bundle {
 
 	public void setRules(List<Rule> rules) {
 		this.rules = rules;
+	}
+
+	public Integer getPriority() {
+		return priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
 	}
 	
 }

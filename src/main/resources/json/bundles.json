@@ -1,0 +1,80 @@
+{
+	"bundles": [
+		{
+			"id": "1",
+			"name": "Junior Saver",
+			"productIds": [
+				{
+					"id": "3"
+				}
+			],
+			"rules": [{"type":"age", "min":"", "max":"18"},{"type":"student", "min":"no", "max":""},{"type":"income", "min":"", "max":""}],
+			"priority": "0"
+		},
+		{
+			"id": "2",
+			"name": "Student",
+			"productIds": [
+				{
+					"id": "4"
+				},
+				{
+					"id": "5"
+				},
+				{
+					"id": "6"
+				}
+			],
+			"rules": [{"type":"age", "min":"17", "max":""},{"type":"student", "min":"", "max":"yes"},{"type":"income", "min":"", "max":""}],
+			"priority": "0"
+		},
+		{
+			"id": "3",
+			"name": "Classic",
+			"productIds": [
+				{
+					"id": "1"
+				},
+				{
+					"id": "5"
+				}
+			],
+			"rules": [{"type":"age", "min":"17", "max":""},{"type":"student", "min":"no", "max":""},{"type":"income", "min":"0", "max":""}],
+			"priority": "1"
+		},
+		{
+			"id": "4",
+			"name": "Classic Plus",
+			"productIds": [
+				{
+					"id": "1"
+				},
+				{
+					"id": "5"
+				},
+				{
+					"id": "6"
+				}
+			],
+			"rules": [{"type":"age", "min":"17", "max":""},{"type":"student", "min":"no", "max":""},{"type":"income", "min":"12000", "max":""}],
+			"priority": "2"
+		},
+		{
+			"id": "5",
+			"name": "Gold",
+			"productIds": [
+				{
+					"id": "2"
+				},
+				{
+					"id": "5"
+				},
+				{
+					"id": "7"
+				}
+			],
+			"rules": [{"type":"age", "min":"17", "max":""},{"type":"student", "min":"no", "max":""},{"type":"income", "min":"40000", "max":""}],
+			"priority": "3"
+		}
+	]
+}

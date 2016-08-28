@@ -10,20 +10,20 @@ import java.util.List;
  */
 public class Question {
 	private final String type;
-	private List<Answer> answers;
+	private List<AnswerBoundaries> answerBoundaries;
 	
 	public Question(String type) {
 		this.type = type;
 	}
 
-	public List<Answer> getAnswers() {
-		return answers;
+	public List<AnswerBoundaries> getAnswerBoundaries() {
+		return answerBoundaries;
 	}
 
-	public void setAnswers(List<List<String>> listOfAnswers) {
-		answers = new ArrayList<Answer>();
-		for(List<String> answer: listOfAnswers) {
-			answers.add(new Answer(answer.get(0), answer.get(1)));
+	public void setAnswerBoundaries(List<List<String>> listOfAnswerBoundaries) {
+		answerBoundaries = new ArrayList<AnswerBoundaries>();
+		for(List<String> answerBoundary: listOfAnswerBoundaries) {
+			answerBoundaries.add(new AnswerBoundaries(answerBoundary.get(0), answerBoundary.get(1)));
 		}
 	}
 
@@ -31,10 +31,10 @@ public class Question {
 		return type;
 	}
 	
-	class Answer {
+	class AnswerBoundaries {
 		String min;
 		String max;
-		Answer(String min, String max) {
+		AnswerBoundaries(String min, String max) {
 			this.min = min;
 			this.max = max;
 		}

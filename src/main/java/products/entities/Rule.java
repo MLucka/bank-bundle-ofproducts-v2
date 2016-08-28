@@ -7,28 +7,15 @@ package products.entities;
  */
 public class Rule {
 	
-	public enum RuleTypes {
-		AGE("age"), STUDENT("student"), INCOME("income");
-		
-		private String type;
-		
-		RuleTypes(String type) {
-			this.type = type;
-		}
-
-		public String getType() {
-			return type;
-		}
-	}
 	
-	private RuleTypes type;
+	private QuestionType type;
 	private final String min;
 	private final String max;
 	
 	
 	public Rule(String type, String min, String max) {
 		super();
-		for(RuleTypes ruleType : RuleTypes.values()) {
+		for(QuestionType ruleType : QuestionType.values()) {
 			if(ruleType.getType().equals(type)) {
 				this.type = ruleType;
 			}
@@ -45,7 +32,7 @@ public class Rule {
 		return max;
 	}
 
-	public RuleTypes getType() {
+	public QuestionType getType() {
 		return type;
 	}
 	
